@@ -1,0 +1,233 @@
+/* 全局樣式 */
+:root {
+    --ion-color-primary: #8a2be2;
+    --ion-color-primary-rgb: 138, 43, 226;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #7926c7;
+    --ion-color-primary-tint: #9640e5;
+
+    --ion-color-secondary: #61b8ff;
+    --ion-color-secondary-rgb: 97, 184, 255;
+    --ion-color-secondary-contrast: #000000;
+    --ion-color-secondary-contrast-rgb: 0, 0, 0;
+    --ion-color-secondary-shade: #55a2e0;
+    --ion-color-secondary-tint: #71bfff;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 語言樣式 */
+html[lang="zh"] .en {
+    display: none;
+}
+
+html[lang="en"] .zh {
+    display: none;
+}
+
+/* 語言切換按鈕效果 */
+#language-toggle {
+    position: relative;
+}
+
+#language-toggle::after {
+    content: attr(data-current-lang);
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--ion-color-primary-contrast);
+    background-color: var(--ion-color-primary-shade);
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html[lang="zh"] #language-toggle::after {
+    content: "中";
+}
+
+html[lang="en"] #language-toggle::after {
+    content: "EN";
+}
+
+/* 首頁樣式 */
+.search-filter-container {
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#yoga-list ion-item {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    --border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.yoga-item-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.yoga-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.yoga-info {
+    flex: 1;
+}
+
+.yoga-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.yoga-difficulty {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--ion-color-medium);
+}
+
+.yoga-effect {
+    font-size: 14px;
+    color: var(--ion-color-medium);
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.beginner {
+    background-color: #4caf50;
+}
+
+.intermediate {
+    background-color: #ff9800;
+}
+
+.advanced {
+    background-color: #f44336;
+}
+
+.strength {
+    background-color: #2196f3;
+}
+
+.flexibility {
+    background-color: #9c27b0;
+}
+
+.balance {
+    background-color: #009688;
+}
+
+.relax {
+    background-color: #607d8b;
+}
+
+/* 詳細頁樣式 */
+.full-width-image {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* 響應式設計 */
+@media (min-width: 768px) {
+    /* 平板和桌面版本 */
+    .search-filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    
+    ion-searchbar {
+        flex: 1 0 100%;
+    }
+    
+    ion-item {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .image-container {
+        max-width: 600px;
+    }
+    
+    .video-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* 桌面版本 */
+    .content-wrapper {
+        display: flex;
+        gap: 32px;
+    }
+    
+    .image-video-section {
+        flex: 1;
+    }
+    
+    .info-section {
+        flex: 1;
+    }
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+} 

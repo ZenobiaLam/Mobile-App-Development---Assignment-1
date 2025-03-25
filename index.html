@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>瑜伽動作大全 | Yoga Poses Collection</title>
+
+    <!-- Ionic 框架 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+
+    <!-- 自定義樣式 -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>
+            <span class="zh">瑜伽動作大全</span>
+            <span class="en">Yoga Poses Collection</span>
+          </ion-title>
+          <ion-buttons slot="end">
+            <ion-button id="language-toggle">
+              <ion-icon slot="icon-only" name="language-outline"></ion-icon>
+            </ion-button>
+            <ion-button href="about.html">
+              <ion-icon
+                slot="icon-only"
+                name="information-circle-outline"
+              ></ion-icon>
+            </ion-button>
+            <ion-button href="contact.html">
+              <ion-icon slot="icon-only" name="mail-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <div class="search-filter-container">
+          <ion-searchbar
+            placeholder="搜尋瑜伽動作"
+            id="searchbar"
+            data-en-placeholder="Search Yoga Poses"
+          ></ion-searchbar>
+
+          <ion-item>
+            <ion-label>
+              <span class="zh">依難度分類</span>
+              <span class="en">Filter by Difficulty</span>
+            </ion-label>
+            <ion-select
+              id="difficulty-filter"
+              placeholder="選擇難度"
+              data-en-placeholder="Select Difficulty"
+            >
+              <ion-select-option value="all">
+                <span class="zh">全部</span>
+                <span class="en">All</span>
+              </ion-select-option>
+              <ion-select-option value="beginner">
+                <span class="zh">初級</span>
+                <span class="en">Beginner</span>
+              </ion-select-option>
+              <ion-select-option value="intermediate">
+                <span class="zh">中級</span>
+                <span class="en">Intermediate</span>
+              </ion-select-option>
+              <ion-select-option value="advanced">
+                <span class="zh">高級</span>
+                <span class="en">Advanced</span>
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              <span class="zh">依效果分類</span>
+              <span class="en">Filter by Effect</span>
+            </ion-label>
+            <ion-select
+              id="effect-filter"
+              placeholder="選擇效果"
+              data-en-placeholder="Select Effect"
+            >
+              <ion-select-option value="all">
+                <span class="zh">全部</span>
+                <span class="en">All</span>
+              </ion-select-option>
+              <ion-select-option value="strength">
+                <span class="zh">增強力量</span>
+                <span class="en">Strength</span>
+              </ion-select-option>
+              <ion-select-option value="flexibility">
+                <span class="zh">提升柔軟度</span>
+                <span class="en">Flexibility</span>
+              </ion-select-option>
+              <ion-select-option value="balance">
+                <span class="zh">改善平衡</span>
+                <span class="en">Balance</span>
+              </ion-select-option>
+              <ion-select-option value="relax">
+                <span class="zh">放鬆減壓</span>
+                <span class="en">Relaxation</span>
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+
+        <ion-list id="yoga-list">
+          <!-- 瑜伽動作項目會通過 JavaScript 動態加載 -->
+          <!-- Yoga poses will be dynamically loaded via JavaScript -->
+        </ion-list>
+      </ion-content>
+    </ion-app>
+
+    <!-- 自定義 JavaScript -->
+    <script src="js/data.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

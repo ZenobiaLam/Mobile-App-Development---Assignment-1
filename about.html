@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>關於我們 | About Us - 瑜伽動作大全 | Yoga Poses Collection</title>
+
+    <!-- Ionic 框架 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+
+    <!-- 自定義樣式 -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-back-button
+              default-href="index.html"
+              href="index.html"
+              text="返回"
+              data-en-text="Back"
+            ></ion-back-button>
+          </ion-buttons>
+          <ion-title>
+            <span class="zh">關於我們</span>
+            <span class="en">About Us</span>
+          </ion-title>
+          <ion-buttons slot="end">
+            <ion-button id="language-toggle">
+              <ion-icon slot="icon-only" name="language-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span class="zh">關於應用</span>
+              <span class="en">About the App</span>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="zh">
+              「瑜伽動作大全」是一個專為瑜伽愛好者設計的應用程式，提供各種瑜伽動作的詳細資訊、示範圖片和教學影片。無論您是初學者還是有經驗的瑜伽練習者，都能找到適合自己的動作。
+            </p>
+            <p class="en">
+              "Yoga Poses Collection" is an application designed for yoga
+              enthusiasts, providing detailed information, demonstration images,
+              and tutorial videos for various yoga poses. Whether you are a
+              beginner or an experienced yoga practitioner, you can find poses
+              suitable for you.
+            </p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span class="zh">開發背景</span>
+              <span class="en">Development Background</span>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="zh">
+              本應用程式是為了學習 Ionic 框架和 Web 開發技術而創建的。通過利用
+              Ionic 提供的 UI 元件和 JavaScript
+              功能，我們實現了一個具備搜尋、分類和詳細資訊展示的瑜伽動作清單。
+            </p>
+            <p class="en">
+              This application was created to learn the Ionic framework and web
+              development technologies. By utilizing the UI components and
+              JavaScript functionality provided by Ionic, we have implemented a
+              yoga pose list with search, categorization, and detailed
+              information display.
+            </p>
+            <p class="zh">主要學習重點包括：</p>
+            <p class="en">Key learning points include:</p>
+            <ul class="zh">
+              <li>使用 Ionic CDN 建立網頁應用程式</li>
+              <li>運用 Ionic UI 元件建立使用者介面</li>
+              <li>實作事件處理與 DOM 操作</li>
+              <li>響應式設計原則</li>
+            </ul>
+            <ul class="en">
+              <li>Using Ionic CDN to build web applications</li>
+              <li>Utilizing Ionic UI components to create user interfaces</li>
+              <li>Implementing event handling and DOM manipulation</li>
+              <li>Responsive design principles</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <span class="zh">開發者資訊</span>
+              <span class="en">Developer Information</span>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p class="zh">
+              本應用由瑜伽愛好者與 Web
+              開發學習者共同開發。我們致力於提供高品質的瑜伽資訊和優質的使用者體驗。
+            </p>
+            <p class="en">
+              This application is developed by yoga enthusiasts and web
+              development learners. We are committed to providing high-quality
+              yoga information and excellent user experience.
+            </p>
+            <ion-item
+              href="https://github.com/"
+              target="_blank"
+              class="ion-margin-top"
+            >
+              <ion-icon name="logo-github" slot="start"></ion-icon>
+              <ion-label>GitHub</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+    </ion-app>
+
+    <!-- 自定義 JavaScript -->
+    <script src="js/language.js"></script>
+  </body>
+</html>
