@@ -58,14 +58,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 設置難度
         const isEnglish = document.documentElement.getAttribute('lang') === 'en';
-        yogaDifficulty.textContent = isEnglish ? difficultyMap_en[yogaPose.difficulty] : difficultyMap[yogaPose.difficulty];
+        yogaDifficulty.textContent = isEnglish ? yogaPose.difficulty : difficultyMap[yogaPose.difficulty];
         yogaDifficulty.className = '';  // 清除所有類別
         yogaDifficulty.classList.add(yogaPose.difficulty);
         
         // 設置圖片和影片
         yogaImage.src = yogaPose.image;
         yogaImage.alt = isEnglish ? yogaPose.name_en : yogaPose.name;
-        yogaVideo.src = yogaPose.video;
+        // yogaVideo.src = yogaPose.video;
+        let videoId = new URL(yogaPose.video).searchParams.get('v');
+        yogaVideo.src = yogaVideo.src.replace('xxxxxxxx', videoId);
         
         // 添加效果標籤
         const effectTagsHTML_zh = yogaPose.effectTags.map(tag => {
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).join(' ');
         
         const effectTagsHTML_en = yogaPose.effectTags.map(tag => {
-            return `<span class="tag ${tag}">${effectTags_en[tag]}</span>`;
+            return `<span class="tag ${tag}">${tag}</span>`;
         }).join(' ');
         
         yogaEffect.innerHTML = `${yogaPose.effect}<br><div class="tags-container">${effectTagsHTML_zh}</div>`;

@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 創建效果標籤HTML
             const effectTagsHTML = pose.effectTags.map(tag => {
-                return `<span class="tag ${tag}">${isEnglish ? effectTags_en[tag] : effectTags[tag]}</span>`;
+                return `<span class="tag ${tag}">${isEnglish ? tag : effectTags[tag]}</span>`;
             }).join('');
             
             // 設置動作列表項內容
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${isEnglish ? pose.name_en : pose.name}
                         </div>
                         <div class="yoga-difficulty">
-                            <span class="tag ${pose.difficulty}">${isEnglish ? difficultyMap_en[pose.difficulty] : difficultyMap[pose.difficulty]}</span>
+                            <span class="tag ${pose.difficulty}">${isEnglish ? pose.difficulty : difficultyMap[pose.difficulty]}</span>
                             ${effectTagsHTML}
                         </div>
                         <div class="yoga-effect">
